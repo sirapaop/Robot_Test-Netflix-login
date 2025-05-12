@@ -1,0 +1,695 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.2.2 (Python 3.12.2 on win32)" generated="2025-05-12T11:21:05.578039" rpa="false" schemaversion="5">
+<suite id="s1" name="Login Test" source="D:\CDTI_work\Year4_CDTI\QA\test_robotFramework\login_test">
+<suite id="s1-s1" name="Invalid login" source="D:\CDTI_work\Year4_CDTI\QA\test_robotFramework\login_test\Invalid_login.robot">
+<kw name="Open Browser To Login Page" owner="resource" type="SETUP">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-05-12T11:21:06.403966" level="INFO">Opening browser 'Chrome' to base url 'https://www.netflix.com/th/login'.</msg>
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-05-12T11:21:06.402966" elapsed="9.056507"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-05-12T11:21:15.460472" elapsed="0.046019"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>name=userLoginId</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-05-12T11:21:15.507491" elapsed="3.992334"/>
+</kw>
+<status status="PASS" start="2025-05-12T11:21:06.401966" elapsed="13.097859"/>
+</kw>
+<test id="s1-s1-t1" name="Invalid Username" line="9">
+<kw name="Go To Login Page" owner="resource" type="SETUP">
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2025-05-12T11:21:19.500826" level="INFO">Opening url 'https://www.netflix.com/th/login'</msg>
+<arg>${URL}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2025-05-12T11:21:19.500826" elapsed="3.965841"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>name=userLoginId</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-05-12T11:21:23.467671" elapsed="0.022238"/>
+</kw>
+<status status="PASS" start="2025-05-12T11:21:19.500826" elapsed="3.989083"/>
+</kw>
+<kw name="Login With Invalid Credentials Should Fail">
+<kw name="Input Username" owner="resource">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-05-12T11:21:23.494438" level="INFO">Typing text 'invalid' into text field 'name=userLoginId'.</msg>
+<arg>name=userLoginId</arg>
+<arg>${username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-12T11:21:23.493441" elapsed="0.420628"/>
+</kw>
+<arg>${username}</arg>
+<status status="PASS" start="2025-05-12T11:21:23.492441" elapsed="0.421628"/>
+</kw>
+<kw name="Input User Password" owner="resource">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-05-12T11:21:23.916073" level="INFO">Typing text 'Ball_Peeraphat2005' into text field 'name=password'.</msg>
+<arg>name=password</arg>
+<arg>${password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-12T11:21:23.915067" elapsed="0.385961"/>
+</kw>
+<arg>${password}</arg>
+<status status="PASS" start="2025-05-12T11:21:23.914069" elapsed="0.386959"/>
+</kw>
+<kw name="Submit Credentials" owner="resource">
+<kw name="Click Login Button" owner="resource">
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-05-12T11:21:24.303027" level="INFO">Clicking button 'xpath=//button[contains(., "เข้าสู่ระบบ")]'.</msg>
+<arg>${LOGIN BUTTON}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-12T11:21:24.302029" elapsed="0.161085"/>
+</kw>
+<status status="PASS" start="2025-05-12T11:21:24.302029" elapsed="0.162088"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-05-12T11:21:25.465456" level="INFO">Slept 1 second.</msg>
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-05-12T11:21:24.464117" elapsed="1.001339"/>
+</kw>
+<status status="PASS" start="2025-05-12T11:21:24.302029" elapsed="1.163427"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Login Should Have Failed" owner="resource">
+<kw name="Location Should Be" owner="SeleniumLibrary">
+<msg time="2025-05-12T11:21:25.472656" level="INFO">Current location is 'https://www.netflix.com/th/login'.</msg>
+<arg>${ERROR URL}</arg>
+<doc>Verifies that the current URL is exactly ``url``.</doc>
+<status status="PASS" start="2025-05-12T11:21:25.466469" elapsed="0.007179"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath=//div[contains(., "ลองอีกครั้ง")]</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-05-12T11:21:25.473648" elapsed="1.367450"/>
+</kw>
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<msg time="2025-05-12T11:21:26.853098" level="INFO">Current page contains element 'xpath=//div[contains(., "ลองอีกครั้ง")]'.</msg>
+<arg>xpath=//div[contains(., "ลองอีกครั้ง")]</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="PASS" start="2025-05-12T11:21:26.841098" elapsed="0.012000"/>
+</kw>
+<status status="PASS" start="2025-05-12T11:21:25.466469" elapsed="1.386629"/>
+</kw>
+<arg>'${expected_type}' == 'generic'</arg>
+<arg>Login Should Have Failed</arg>
+<arg>ELSE IF</arg>
+<arg>'${expected_type}' == 'empty_user'</arg>
+<arg>Login Should Empty User</arg>
+<arg>ELSE IF</arg>
+<arg>'${expected_type}' == 'empty_pass'</arg>
+<arg>Login Should Empty Password</arg>
+<arg>ELSE IF</arg>
+<arg>'${expected_type}' == 'empty_both'</arg>
+<arg>Login Should Empty User And Password</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-05-12T11:21:25.465456" elapsed="1.387642"/>
+</kw>
+<arg>invalid</arg>
+<arg>${VALID PASSWORD}</arg>
+<arg>generic</arg>
+<status status="PASS" start="2025-05-12T11:21:23.491424" elapsed="3.361674"/>
+</kw>
+<status status="PASS" start="2025-05-12T11:21:19.499825" elapsed="7.354326"/>
+</test>
+<test id="s1-s1-t2" name="Invalid Password" line="10">
+<kw name="Go To Login Page" owner="resource" type="SETUP">
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2025-05-12T11:21:26.855097" level="INFO">Opening url 'https://www.netflix.com/th/login'</msg>
+<arg>${URL}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2025-05-12T11:21:26.855097" elapsed="3.228157"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>name=userLoginId</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-05-12T11:21:30.083254" elapsed="0.017753"/>
+</kw>
+<status status="PASS" start="2025-05-12T11:21:26.855097" elapsed="3.245910"/>
+</kw>
+<kw name="Login With Invalid Credentials Should Fail">
+<kw name="Input Username" owner="resource">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-05-12T11:21:30.102008" level="INFO">Typing text 'pton451@gmail.com' into text field 'name=userLoginId'.</msg>
+<arg>name=userLoginId</arg>
+<arg>${username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-12T11:21:30.102008" elapsed="0.497998"/>
+</kw>
+<arg>${username}</arg>
+<status status="PASS" start="2025-05-12T11:21:30.102008" elapsed="0.497998"/>
+</kw>
+<kw name="Input User Password" owner="resource">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-05-12T11:21:30.601006" level="INFO">Typing text 'invalid' into text field 'name=password'.</msg>
+<arg>name=password</arg>
+<arg>${password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-12T11:21:30.601006" elapsed="0.220779"/>
+</kw>
+<arg>${password}</arg>
+<status status="PASS" start="2025-05-12T11:21:30.600006" elapsed="0.221779"/>
+</kw>
+<kw name="Submit Credentials" owner="resource">
+<kw name="Click Login Button" owner="resource">
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-05-12T11:21:30.822785" level="INFO">Clicking button 'xpath=//button[contains(., "เข้าสู่ระบบ")]'.</msg>
+<arg>${LOGIN BUTTON}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-12T11:21:30.822785" elapsed="0.140003"/>
+</kw>
+<status status="PASS" start="2025-05-12T11:21:30.821785" elapsed="0.141003"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-05-12T11:21:31.963331" level="INFO">Slept 1 second.</msg>
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-05-12T11:21:30.962788" elapsed="1.000543"/>
+</kw>
+<status status="PASS" start="2025-05-12T11:21:30.821785" elapsed="1.141546"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Login Should Have Failed" owner="resource">
+<kw name="Location Should Be" owner="SeleniumLibrary">
+<msg time="2025-05-12T11:21:31.976205" level="INFO">Current location is 'https://www.netflix.com/th/login'.</msg>
+<arg>${ERROR URL}</arg>
+<doc>Verifies that the current URL is exactly ``url``.</doc>
+<status status="PASS" start="2025-05-12T11:21:31.967646" elapsed="0.008559"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath=//div[contains(., "ลองอีกครั้ง")]</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-05-12T11:21:31.976205" elapsed="1.339904"/>
+</kw>
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<msg time="2025-05-12T11:21:33.327342" level="INFO">Current page contains element 'xpath=//div[contains(., "ลองอีกครั้ง")]'.</msg>
+<arg>xpath=//div[contains(., "ลองอีกครั้ง")]</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="PASS" start="2025-05-12T11:21:33.316109" elapsed="0.011305"/>
+</kw>
+<status status="PASS" start="2025-05-12T11:21:31.965269" elapsed="1.362310"/>
+</kw>
+<arg>'${expected_type}' == 'generic'</arg>
+<arg>Login Should Have Failed</arg>
+<arg>ELSE IF</arg>
+<arg>'${expected_type}' == 'empty_user'</arg>
+<arg>Login Should Empty User</arg>
+<arg>ELSE IF</arg>
+<arg>'${expected_type}' == 'empty_pass'</arg>
+<arg>Login Should Empty Password</arg>
+<arg>ELSE IF</arg>
+<arg>'${expected_type}' == 'empty_both'</arg>
+<arg>Login Should Empty User And Password</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-05-12T11:21:31.963331" elapsed="1.364248"/>
+</kw>
+<arg>${VALID USER}</arg>
+<arg>invalid</arg>
+<arg>generic</arg>
+<status status="PASS" start="2025-05-12T11:21:30.101007" elapsed="3.226572"/>
+</kw>
+<status status="PASS" start="2025-05-12T11:21:26.854151" elapsed="6.473428"/>
+</test>
+<test id="s1-s1-t3" name="Invalid Username And Password" line="11">
+<kw name="Go To Login Page" owner="resource" type="SETUP">
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2025-05-12T11:21:33.328581" level="INFO">Opening url 'https://www.netflix.com/th/login'</msg>
+<arg>${URL}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2025-05-12T11:21:33.328581" elapsed="3.002311"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>name=userLoginId</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-05-12T11:21:36.330892" elapsed="0.037897"/>
+</kw>
+<status status="PASS" start="2025-05-12T11:21:33.328581" elapsed="3.040208"/>
+</kw>
+<kw name="Login With Invalid Credentials Should Fail">
+<kw name="Input Username" owner="resource">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-05-12T11:21:36.369816" level="INFO">Typing text 'invalid' into text field 'name=userLoginId'.</msg>
+<arg>name=userLoginId</arg>
+<arg>${username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-12T11:21:36.369816" elapsed="0.366587"/>
+</kw>
+<arg>${username}</arg>
+<status status="PASS" start="2025-05-12T11:21:36.369816" elapsed="0.366587"/>
+</kw>
+<kw name="Input User Password" owner="resource">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-05-12T11:21:36.738409" level="INFO">Typing text 'whatever' into text field 'name=password'.</msg>
+<arg>name=password</arg>
+<arg>${password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-12T11:21:36.737402" elapsed="0.266767"/>
+</kw>
+<arg>${password}</arg>
+<status status="PASS" start="2025-05-12T11:21:36.737402" elapsed="0.266767"/>
+</kw>
+<kw name="Submit Credentials" owner="resource">
+<kw name="Click Login Button" owner="resource">
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-05-12T11:21:37.005679" level="INFO">Clicking button 'xpath=//button[contains(., "เข้าสู่ระบบ")]'.</msg>
+<arg>${LOGIN BUTTON}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-12T11:21:37.004169" elapsed="0.196360"/>
+</kw>
+<status status="PASS" start="2025-05-12T11:21:37.004169" elapsed="0.196360"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-05-12T11:21:38.201946" level="INFO">Slept 1 second.</msg>
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-05-12T11:21:37.201532" elapsed="1.000414"/>
+</kw>
+<status status="PASS" start="2025-05-12T11:21:37.004169" elapsed="1.197777"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Login Should Have Failed" owner="resource">
+<kw name="Location Should Be" owner="SeleniumLibrary">
+<msg time="2025-05-12T11:21:38.207805" level="INFO">Current location is 'https://www.netflix.com/th/login'.</msg>
+<arg>${ERROR URL}</arg>
+<doc>Verifies that the current URL is exactly ``url``.</doc>
+<status status="PASS" start="2025-05-12T11:21:38.201946" elapsed="0.005859"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath=//div[contains(., "ลองอีกครั้ง")]</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-05-12T11:21:38.208839" elapsed="1.414177"/>
+</kw>
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<msg time="2025-05-12T11:21:39.633012" level="INFO">Current page contains element 'xpath=//div[contains(., "ลองอีกครั้ง")]'.</msg>
+<arg>xpath=//div[contains(., "ลองอีกครั้ง")]</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="PASS" start="2025-05-12T11:21:39.623016" elapsed="0.009996"/>
+</kw>
+<status status="PASS" start="2025-05-12T11:21:38.201946" elapsed="1.431066"/>
+</kw>
+<arg>'${expected_type}' == 'generic'</arg>
+<arg>Login Should Have Failed</arg>
+<arg>ELSE IF</arg>
+<arg>'${expected_type}' == 'empty_user'</arg>
+<arg>Login Should Empty User</arg>
+<arg>ELSE IF</arg>
+<arg>'${expected_type}' == 'empty_pass'</arg>
+<arg>Login Should Empty Password</arg>
+<arg>ELSE IF</arg>
+<arg>'${expected_type}' == 'empty_both'</arg>
+<arg>Login Should Empty User And Password</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-05-12T11:21:38.201946" elapsed="1.431066"/>
+</kw>
+<arg>invalid</arg>
+<arg>whatever</arg>
+<arg>generic</arg>
+<status status="PASS" start="2025-05-12T11:21:36.368789" elapsed="3.264223"/>
+</kw>
+<status status="PASS" start="2025-05-12T11:21:33.328581" elapsed="6.305433"/>
+</test>
+<test id="s1-s1-t4" name="Empty Username" line="12">
+<kw name="Go To Login Page" owner="resource" type="SETUP">
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2025-05-12T11:21:39.635014" level="INFO">Opening url 'https://www.netflix.com/th/login'</msg>
+<arg>${URL}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2025-05-12T11:21:39.635014" elapsed="3.166659"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>name=userLoginId</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-05-12T11:21:42.802675" elapsed="0.016487"/>
+</kw>
+<status status="PASS" start="2025-05-12T11:21:39.635014" elapsed="3.184148"/>
+</kw>
+<kw name="Login With Invalid Credentials Should Fail">
+<kw name="Input Username" owner="resource">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-05-12T11:21:42.820150" level="INFO">Typing text '' into text field 'name=userLoginId'.</msg>
+<arg>name=userLoginId</arg>
+<arg>${username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-12T11:21:42.820150" elapsed="0.127289"/>
+</kw>
+<arg>${username}</arg>
+<status status="PASS" start="2025-05-12T11:21:42.820150" elapsed="0.127289"/>
+</kw>
+<kw name="Input User Password" owner="resource">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-05-12T11:21:42.947439" level="INFO">Typing text 'Ball_Peeraphat2005' into text field 'name=password'.</msg>
+<arg>name=password</arg>
+<arg>${password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-12T11:21:42.947439" elapsed="0.370152"/>
+</kw>
+<arg>${password}</arg>
+<status status="PASS" start="2025-05-12T11:21:42.947439" elapsed="0.370152"/>
+</kw>
+<kw name="Submit Credentials" owner="resource">
+<kw name="Click Login Button" owner="resource">
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-05-12T11:21:43.318843" level="INFO">Clicking button 'xpath=//button[contains(., "เข้าสู่ระบบ")]'.</msg>
+<arg>${LOGIN BUTTON}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-12T11:21:43.318843" elapsed="0.137022"/>
+</kw>
+<status status="PASS" start="2025-05-12T11:21:43.317821" elapsed="0.138044"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-05-12T11:21:44.457432" level="INFO">Slept 1 second.</msg>
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-05-12T11:21:43.455865" elapsed="1.001719"/>
+</kw>
+<status status="PASS" start="2025-05-12T11:21:43.317821" elapsed="1.139763"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Login Should Empty User" owner="resource">
+<kw name="Location Should Be" owner="SeleniumLibrary">
+<msg time="2025-05-12T11:21:44.464588" level="INFO">Current location is 'https://www.netflix.com/th/login'.</msg>
+<arg>${ERROR URL}</arg>
+<doc>Verifies that the current URL is exactly ``url``.</doc>
+<status status="PASS" start="2025-05-12T11:21:44.457584" elapsed="0.007004"/>
+</kw>
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<msg time="2025-05-12T11:21:44.478170" level="INFO">Current page contains element 'xpath=//div[contains(., "โปรดระบุอีเมลหรือหมายเลขโทรศัพท์ที่ถูกต้อง")]'.</msg>
+<arg>xpath=//div[contains(., "โปรดระบุอีเมลหรือหมายเลขโทรศัพท์ที่ถูกต้อง")]</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="PASS" start="2025-05-12T11:21:44.464588" elapsed="0.013582"/>
+</kw>
+<status status="PASS" start="2025-05-12T11:21:44.457584" elapsed="0.020586"/>
+</kw>
+<arg>'${expected_type}' == 'generic'</arg>
+<arg>Login Should Have Failed</arg>
+<arg>ELSE IF</arg>
+<arg>'${expected_type}' == 'empty_user'</arg>
+<arg>Login Should Empty User</arg>
+<arg>ELSE IF</arg>
+<arg>'${expected_type}' == 'empty_pass'</arg>
+<arg>Login Should Empty Password</arg>
+<arg>ELSE IF</arg>
+<arg>'${expected_type}' == 'empty_both'</arg>
+<arg>Login Should Empty User And Password</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-05-12T11:21:44.457584" elapsed="0.020586"/>
+</kw>
+<arg>${EMPTY}</arg>
+<arg>${VALID PASSWORD}</arg>
+<arg>empty_user</arg>
+<status status="PASS" start="2025-05-12T11:21:42.820150" elapsed="1.658020"/>
+</kw>
+<status status="PASS" start="2025-05-12T11:21:39.634014" elapsed="4.844156"/>
+</test>
+<test id="s1-s1-t5" name="Empty Password" line="13">
+<kw name="Go To Login Page" owner="resource" type="SETUP">
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2025-05-12T11:21:44.480172" level="INFO">Opening url 'https://www.netflix.com/th/login'</msg>
+<arg>${URL}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2025-05-12T11:21:44.480172" elapsed="2.405703"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>name=userLoginId</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-05-12T11:21:46.885875" elapsed="0.030535"/>
+</kw>
+<status status="PASS" start="2025-05-12T11:21:44.480172" elapsed="2.436238"/>
+</kw>
+<kw name="Login With Invalid Credentials Should Fail">
+<kw name="Input Username" owner="resource">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-05-12T11:21:46.917410" level="INFO">Typing text 'pton451@gmail.com' into text field 'name=userLoginId'.</msg>
+<arg>name=userLoginId</arg>
+<arg>${username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-12T11:21:46.917410" elapsed="0.523898"/>
+</kw>
+<arg>${username}</arg>
+<status status="PASS" start="2025-05-12T11:21:46.917410" elapsed="0.523898"/>
+</kw>
+<kw name="Input User Password" owner="resource">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-05-12T11:21:47.442307" level="INFO">Typing text '' into text field 'name=password'.</msg>
+<arg>name=password</arg>
+<arg>${password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-12T11:21:47.442307" elapsed="0.193951"/>
+</kw>
+<arg>${password}</arg>
+<status status="PASS" start="2025-05-12T11:21:47.442307" elapsed="0.194951"/>
+</kw>
+<kw name="Submit Credentials" owner="resource">
+<kw name="Click Login Button" owner="resource">
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-05-12T11:21:47.637258" level="INFO">Clicking button 'xpath=//button[contains(., "เข้าสู่ระบบ")]'.</msg>
+<arg>${LOGIN BUTTON}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-12T11:21:47.637258" elapsed="0.139089"/>
+</kw>
+<status status="PASS" start="2025-05-12T11:21:47.637258" elapsed="0.139089"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-05-12T11:21:48.777620" level="INFO">Slept 1 second.</msg>
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-05-12T11:21:47.776347" elapsed="1.001421"/>
+</kw>
+<status status="PASS" start="2025-05-12T11:21:47.637258" elapsed="1.140510"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Login Should Empty Password" owner="resource">
+<kw name="Location Should Be" owner="SeleniumLibrary">
+<msg time="2025-05-12T11:21:48.784785" level="INFO">Current location is 'https://www.netflix.com/th/login'.</msg>
+<arg>${ERROR URL}</arg>
+<doc>Verifies that the current URL is exactly ``url``.</doc>
+<status status="PASS" start="2025-05-12T11:21:48.777768" elapsed="0.007017"/>
+</kw>
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<msg time="2025-05-12T11:21:48.797260" level="INFO">Current page contains element 'xpath=//div[contains(., "รหัสผ่านต้องมีอักขระ 4 ถึง 60 ตัว")]'.</msg>
+<arg>xpath=//div[contains(., "รหัสผ่านต้องมีอักขระ 4 ถึง 60 ตัว")]</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="PASS" start="2025-05-12T11:21:48.784785" elapsed="0.013479"/>
+</kw>
+<status status="PASS" start="2025-05-12T11:21:48.777768" elapsed="0.020496"/>
+</kw>
+<arg>'${expected_type}' == 'generic'</arg>
+<arg>Login Should Have Failed</arg>
+<arg>ELSE IF</arg>
+<arg>'${expected_type}' == 'empty_user'</arg>
+<arg>Login Should Empty User</arg>
+<arg>ELSE IF</arg>
+<arg>'${expected_type}' == 'empty_pass'</arg>
+<arg>Login Should Empty Password</arg>
+<arg>ELSE IF</arg>
+<arg>'${expected_type}' == 'empty_both'</arg>
+<arg>Login Should Empty User And Password</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-05-12T11:21:48.777768" elapsed="0.020496"/>
+</kw>
+<arg>${VALID USER}</arg>
+<arg>${EMPTY}</arg>
+<arg>empty_pass</arg>
+<status status="PASS" start="2025-05-12T11:21:46.917410" elapsed="1.880854"/>
+</kw>
+<status status="PASS" start="2025-05-12T11:21:44.479169" elapsed="4.319095"/>
+</test>
+<test id="s1-s1-t6" name="Empty Username And Password" line="14">
+<kw name="Go To Login Page" owner="resource" type="SETUP">
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2025-05-12T11:21:48.800263" level="INFO">Opening url 'https://www.netflix.com/th/login'</msg>
+<arg>${URL}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2025-05-12T11:21:48.800263" elapsed="3.079523"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>name=userLoginId</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-05-12T11:21:51.880788" elapsed="0.033932"/>
+</kw>
+<status status="PASS" start="2025-05-12T11:21:48.799263" elapsed="3.115457"/>
+</kw>
+<kw name="Login With Invalid Credentials Should Fail">
+<kw name="Input Username" owner="resource">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-05-12T11:21:51.918073" level="INFO">Typing text '' into text field 'name=userLoginId'.</msg>
+<arg>name=userLoginId</arg>
+<arg>${username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-12T11:21:51.917051" elapsed="0.218623"/>
+</kw>
+<arg>${username}</arg>
+<status status="PASS" start="2025-05-12T11:21:51.915722" elapsed="0.219952"/>
+</kw>
+<kw name="Input User Password" owner="resource">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-05-12T11:21:52.136674" level="INFO">Typing text '' into text field 'name=password'.</msg>
+<arg>name=password</arg>
+<arg>${password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-12T11:21:52.136674" elapsed="0.153059"/>
+</kw>
+<arg>${password}</arg>
+<status status="PASS" start="2025-05-12T11:21:52.136674" elapsed="0.153059"/>
+</kw>
+<kw name="Submit Credentials" owner="resource">
+<kw name="Click Login Button" owner="resource">
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-05-12T11:21:52.291738" level="INFO">Clicking button 'xpath=//button[contains(., "เข้าสู่ระบบ")]'.</msg>
+<arg>${LOGIN BUTTON}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-12T11:21:52.290732" elapsed="0.184286"/>
+</kw>
+<status status="PASS" start="2025-05-12T11:21:52.290732" elapsed="0.184286"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-05-12T11:21:53.476166" level="INFO">Slept 1 second.</msg>
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-05-12T11:21:52.475018" elapsed="1.001148"/>
+</kw>
+<status status="PASS" start="2025-05-12T11:21:52.290732" elapsed="1.185434"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Login Should Empty User And Password" owner="resource">
+<kw name="Location Should Be" owner="SeleniumLibrary">
+<msg time="2025-05-12T11:21:53.483051" level="INFO">Current location is 'https://www.netflix.com/th/login'.</msg>
+<arg>${ERROR URL}</arg>
+<doc>Verifies that the current URL is exactly ``url``.</doc>
+<status status="PASS" start="2025-05-12T11:21:53.476671" elapsed="0.006380"/>
+</kw>
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<msg time="2025-05-12T11:21:53.493286" level="INFO">Current page contains element 'xpath=//div[contains(., "โปรดระบุอีเมลหรือหมายเลขโทรศัพท์ที่ถูกต้อง")]'.</msg>
+<arg>xpath=//div[contains(., "โปรดระบุอีเมลหรือหมายเลขโทรศัพท์ที่ถูกต้อง")]</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="PASS" start="2025-05-12T11:21:53.483051" elapsed="0.010235"/>
+</kw>
+<status status="PASS" start="2025-05-12T11:21:53.476671" elapsed="0.016615"/>
+</kw>
+<arg>'${expected_type}' == 'generic'</arg>
+<arg>Login Should Have Failed</arg>
+<arg>ELSE IF</arg>
+<arg>'${expected_type}' == 'empty_user'</arg>
+<arg>Login Should Empty User</arg>
+<arg>ELSE IF</arg>
+<arg>'${expected_type}' == 'empty_pass'</arg>
+<arg>Login Should Empty Password</arg>
+<arg>ELSE IF</arg>
+<arg>'${expected_type}' == 'empty_both'</arg>
+<arg>Login Should Empty User And Password</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-05-12T11:21:53.476166" elapsed="0.017120"/>
+</kw>
+<arg>${EMPTY}</arg>
+<arg>${EMPTY}</arg>
+<arg>empty_both</arg>
+<status status="PASS" start="2025-05-12T11:21:51.915722" elapsed="1.577564"/>
+</kw>
+<status status="PASS" start="2025-05-12T11:21:48.799263" elapsed="4.694023"/>
+</test>
+<kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-05-12T11:21:53.494286" elapsed="2.247561"/>
+</kw>
+<status status="PASS" start="2025-05-12T11:21:05.607026" elapsed="50.134821"/>
+</suite>
+<suite id="s1-s2" name="Valid login" source="D:\CDTI_work\Year4_CDTI\QA\test_robotFramework\login_test\Valid_login.robot">
+<kw name="Open Browser To Login Page" owner="resource" type="SETUP">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-05-12T11:21:55.749020" level="INFO">Opening browser 'Chrome' to base url 'https://www.netflix.com/th/login'.</msg>
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-05-12T11:21:55.748023" elapsed="6.484677"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-05-12T11:22:02.232700" elapsed="0.027010"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>name=userLoginId</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-05-12T11:22:02.259710" elapsed="2.144031"/>
+</kw>
+<status status="PASS" start="2025-05-12T11:21:55.748023" elapsed="8.655718"/>
+</kw>
+<test id="s1-s2-t1" name="Login With Valid Credentials" line="7">
+<kw name="Input Username" owner="resource">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-05-12T11:22:04.407060" level="INFO">Typing text 'pton451@gmail.com' into text field 'name=userLoginId'.</msg>
+<arg>name=userLoginId</arg>
+<arg>${username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-12T11:22:04.407060" elapsed="0.492680"/>
+</kw>
+<arg>${VALID USER}</arg>
+<status status="PASS" start="2025-05-12T11:22:04.405744" elapsed="0.493996"/>
+</kw>
+<kw name="Input User Password" owner="resource">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-05-12T11:22:04.901747" level="INFO">Typing text 'Ball_Peeraphat2005' into text field 'name=password'.</msg>
+<arg>name=password</arg>
+<arg>${password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-12T11:22:04.900741" elapsed="0.317016"/>
+</kw>
+<arg>${VALID PASSWORD}</arg>
+<status status="PASS" start="2025-05-12T11:22:04.900741" elapsed="0.317016"/>
+</kw>
+<kw name="Click Login Button" owner="resource">
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-05-12T11:22:05.218792" level="INFO">Clicking button 'xpath=//button[contains(., "เข้าสู่ระบบ")]'.</msg>
+<arg>${LOGIN BUTTON}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-12T11:22:05.218792" elapsed="0.142704"/>
+</kw>
+<status status="PASS" start="2025-05-12T11:22:05.217757" elapsed="0.143739"/>
+</kw>
+<kw name="Wait Until Location Contains" owner="SeleniumLibrary">
+<arg>browse</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the current URL contains ``expected``.</doc>
+<status status="PASS" start="2025-05-12T11:22:05.362500" elapsed="9.418636"/>
+</kw>
+<kw name="Location Should Contain" owner="SeleniumLibrary">
+<msg time="2025-05-12T11:22:14.795994" level="INFO">Current location contains 'browse'.</msg>
+<arg>browse</arg>
+<doc>Verifies that the current URL contains ``expected``.</doc>
+<status status="PASS" start="2025-05-12T11:22:14.782132" elapsed="0.013862"/>
+</kw>
+<doc>ล็อกอินด้วยอีเมลและรหัสผ่านที่ถูกต้อง</doc>
+<status status="PASS" start="2025-05-12T11:22:04.403741" elapsed="10.393253"/>
+</test>
+<kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-05-12T11:22:14.801904" elapsed="2.243100"/>
+</kw>
+<status status="PASS" start="2025-05-12T11:21:55.742843" elapsed="21.302161"/>
+</suite>
+<status status="PASS" start="2025-05-12T11:21:05.580041" elapsed="71.467146"/>
+</suite>
+<statistics>
+<total>
+<stat pass="7" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="Login Test" id="s1" pass="7" fail="0" skip="0">Login Test</stat>
+<stat name="Invalid login" id="s1-s1" pass="6" fail="0" skip="0">Login Test.Invalid login</stat>
+<stat name="Valid login" id="s1-s2" pass="1" fail="0" skip="0">Login Test.Valid login</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
