@@ -6,4 +6,4 @@ resource.robot file
 
 
 how to run this code?
-    - robot ./login_test
+ - robot ./login_test
