@@ -4,8 +4,8 @@ Library           SeleniumLibrary
 *** Variables ***
 ${BROWSER}        Chrome
 ${URL}            https://www.netflix.com/th/login
-${VALID USER}     pton451@gmail.com
-${VALID PASSWORD}     Ball_Peeraphat2005
+${VALID USER}     your username in netflix account
+${VALID PASSWORD}     your password in netflix account
 ${INVALID USER}   invalid_user@example.com
 ${INVALID PASSWORD}     wrong_password
 ${LOGIN BUTTON}   xpath=//button[contains(., "เข้าสู่ระบบ")]
